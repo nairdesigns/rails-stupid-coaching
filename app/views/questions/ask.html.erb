@@ -1,4 +1,11 @@
- <form action="/answer">
-  <input type="text" name="answer-number">
+ <form action="/answer" method="get">
+ Ask a Question
+     <%
+=begin%>
+ <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= hidden_field_tag :letters, 'abcd' %>
+<%
+=end%>
+  <input type="text" name="question" value="<%= params[:question] %>">
   <input type="submit" value="Ask!">
 </form>
